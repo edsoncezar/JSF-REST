@@ -47,7 +47,7 @@ public class ConsumirBean {
 			 Invocation.Builder ib = target.request(MediaType.APPLICATION_JSON);
 			 Response response = ib.post(Entity.entity(obj, MediaType.APPLICATION_JSON));
 
-			 return client.target("http://localhost:8080/lancamento").request(MediaType.APPLICATION_JSON).post(Entity.entity(obj, MediaType.APPLICATION_JSON));
+			 return client.target("http://localhost:8080/hotels/avail").request(MediaType.APPLICATION_JSON).post(Entity.entity(obj, MediaType.APPLICATION_JSON));
 			
 		}
 		
@@ -61,7 +61,7 @@ public class ConsumirBean {
 			 Invocation.Builder ib = target.request(MediaType.APPLICATION_JSON);
 			 Response response = ib.post(Entity.entity(obj, MediaType.APPLICATION_JSON));
 
-			 return client.target("http://localhost:8080/lancamento").request(MediaType.APPLICATION_JSON).post(Entity.entity(obj, MediaType.APPLICATION_JSON));
+			 return client.target("http://localhost:8080/hotels").request(MediaType.APPLICATION_JSON).post(Entity.entity(obj, MediaType.APPLICATION_JSON));
 			
 		}
 
