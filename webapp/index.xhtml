@@ -1,0 +1,72 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hoteis por Cidade</title>
+</h:head>
+<h:body style="background-color: #E8E8E8;">
+	<h1 style="text-align:center; color: green">Hoteis por Cidade:</h1>
+	
+	
+	<h:form >
+		<h:panelGrid columns="2" style="margin-left: 500px;">
+			<h:outputLabel value="ID Cidade:" />
+			<h:inputText value="#{consumirBean.id}" />	
+		</h:panelGrid>
+		
+		<h:panelGrid columns="2" style="margin-left: 500px;">		
+			<h:outputLabel value="ID Hotel : " />
+			<h:inputText value="#{consumirBean.cityCode}" />
+		</h:panelGrid>
+		
+		<br/>
+			<center><p:commandButton action="#{consumirBean.enviaDadosCity()}" ajax="true" value="Enviar Cidade" icon="ui-icon-check" style="width: 180px;">
+				<p:ajax update=":formularioId:tabelaId" />
+			 </p:commandButton></center>
+			 <center><p:commandButton action="#{consumirBean.enviaDadosHotel()}" ajax="true" value="Enviar Hotel" icon="ui-icon-check" style="width: 180px;">
+				<p:ajax update=":formularioId:tabelaId" />
+			 </p:commandButton></center>
+	</h:form>
+	
+	<h:form id="formularioId">
+	<p:dataTable value="#{consumirBean.pegaDados}" id="tabelaId"  var="f" style="margin-right:auto; margin-left:auto;">
+		<p:column>
+			<f:facet name="header">
+				 <h:outputText value="ID"/>
+			</f:facet>
+			<center><h:outputText value="#{f.id}"/></center>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				 <h:outputText value="Dia"/>
+			</f:facet>
+			<center><h:outputText value="#{f.name}"/></center>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				 <h:outputText value="ID Cidade"/>
+			</f:facet>
+			<center><h:outputText value="#{f.cityCode}"/></center>
+		</p:column>
+		
+		<p:column>
+			<f:facet name="header">
+				 <h:outputText value="Nome da Cidade"/>
+			</f:facet>
+			<center><h:outputText value="#{f.cityName}"/></center>
+		</p:column>
+	
+	</p:dataTable>
+	</h:form>
+	<script>
+		function reload(){
+			alert("Atualize a página para exibir o novo registro!")
+			}
+	
+	</script>
+	
+</h:body>
+</html>
