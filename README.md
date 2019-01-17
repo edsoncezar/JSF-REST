@@ -1,6 +1,6 @@
 # JSF-REST
 
-Developing Your First Spring Boot Application This section describes how to develop a simple “Hello World!” web application that highlights some of Spring Boot’s key features. We use Maven to build this project, since most IDEs support it.
+Developing Your First Spring Boot Application a simple “Hello World!” web application that highlights some of Spring Boot’s key features. We use Maven to build this project, since most IDEs support it.
 
 The spring.io web site contains many “Getting Started” guides that use Spring Boot. If you need to solve a specific problem, check there first.
 
